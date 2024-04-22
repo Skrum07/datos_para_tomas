@@ -1,0 +1,31 @@
+<!-- Title group -->
+<div class="title-group">
+    <h1 class="mat-h1">Agregar Familia</h1>
+    <mat-divider fxFlex="1 0"></mat-divider>
+  </div>
+
+  <!-- Form -->
+  <div class="inner-wrapper">
+    <form [formGroup]="familiaForm" (ngSubmit)="openDialog()" #resetFamiliaForm="ngForm" novalidate>
+        <!-- Left block -->
+        <mat-card>
+            <div class="controlers-wrapper">
+
+                <!-- Nombre Familia -->
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nombre de Familia" formControlName="family_name">
+                    <mat-error *ngIf="handleError('family_name', 'required')">
+                        Debe ingresar un <strong>nombre de familia.</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </mat-card>
+        <!-- Submit & Reset -->
+
+        <div class="full-wrapper button-wrapper">
+            <button type="button" class="btn btn-outline-blue" [routerLink]="'/'">Cancelar</button>
+            <button class="btn btn-blue">Guardar</button>
+      </div>
+
+    </form>
+  </div>
